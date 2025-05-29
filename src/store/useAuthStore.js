@@ -70,7 +70,7 @@ export const useAuthStore = create((set, get) => ({
     set({ isLogginging: true })
     try {
       const res = await axiosInstance.post('/auth/login', data)
-      toast.success('Logged in successfully')
+      toast.success('登陆成功')
 
       set({ authUser: res.data })
 

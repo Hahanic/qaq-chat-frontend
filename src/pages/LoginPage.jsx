@@ -3,8 +3,11 @@ import { useAuthStore } from "../store/useAuthStore";
 import { Eye, EyeOff, Loader2, Mail, MessageSquare, Lock } from "lucide-react";
 import { Link } from "react-router-dom";
 import AuthImagePattern from "../components/AuthImagePattern.jsx";
+import { useTranslation } from "../locales/TranslationContext.jsx";
 
 const LoginPage = () => {
+  const { t } = useTranslation()
+
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
@@ -31,8 +34,8 @@ return (
               >
                 <MessageSquare className="w-6 h-6 text-primary" />
               </div>
-              <h1 className="text-2xl font-bold mt-2">Welcome Back</h1>
-              <p className="text-base-content/60">Sign in to your account</p>
+              <h1 className="text-2xl font-bold mt-2">{t('welcome')}</h1>
+              <p className="text-base-content/60">{t('logindesc')}</p>
             </div>
           </div>
 
@@ -40,7 +43,7 @@ return (
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-medium">Email</span>
+                <span className="label-text font-medium">{t('email')}</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -58,7 +61,7 @@ return (
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-medium">Password</span>
+                <span className="label-text font-medium">{t('password')}</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -89,19 +92,19 @@ return (
               {isLoggingIn ? (
                 <>
                   <Loader2 className="h-5 w-5 animate-spin" />
-                  Loading...
+                  {t('signing')}
                 </>
               ) : (
-                "Sign in"
+                t('sign')
               )}
             </button>
           </form>
 
           <div className="text-center">
             <p className="text-base-content/60">
-              Don&apos;t have an account?{" "}
+              {t('notacc')}{" "}
               <Link to="/signup" className="link link-primary">
-                Create account
+                {t('create')}
               </Link>
             </p>
           </div>
@@ -110,8 +113,8 @@ return (
 
       {/* Right Side - Image/Pattern */}
       <AuthImagePattern
-        title={"Welcome back!"}
-        subtitle={"Sign in to continue your conversations and catch up with your messages."}
+        title={"LskeletonT"}
+        subtitle={"LskeletonD"}
       />
     </div>
   );

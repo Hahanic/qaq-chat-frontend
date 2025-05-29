@@ -1,0 +1,64 @@
+{
+  "title":"OURO",
+  "set":"Settings",
+  "profile":"Profile",
+  "logout":"Logout",
+  "toggleLang":"languages",
+
+  "profiledata":"Your profile information",
+  "profileupdating":"Uploading...",
+  "profileupdate":"Click the camera icon to update your Avatar",
+  "accinfor":"Account Information",
+  "regdate":"Member Since",
+  "accstatus":"Account Status",
+  "status":"Active",
+
+  "welcome":"Welcome Back",
+  "logindesc":"Sign in to your account",
+  "email":"Email",
+  "password":"Password",
+  "sign":"Sign in",
+  "signing":"Loading",
+  "notacc":"Don't have an account?",
+  "create":"Create account",
+
+  "LskeletonT":"Welcome back!",
+  "LskeletonD":"Sign in to continue your conversations and catch up with your messages.",
+
+  "SskeletonT":"Join our community",
+  "SskeletonD":"Connect with friends, share moments, and stay in touch with your loved ones.",
+
+  "welcomein":"Create Account",
+  "signdesc":"Get started with your free account",
+  "name":"Full Name",
+  "havacc":"Already have an account?",
+  "craeting":"Loading",
+
+  "theme":"Theme",
+  "themedesc":"Choose a theme for your chat interface",
+  "preview":"Preview",
+  "prename":"John Wick",
+
+
+  "welcometitle":"Welcome to OURO!",
+  "welcomedesc":"Select a conversation from the sidebar to start chatting",
+
+  "contacts":"Contacts",
+  "online":"Online",
+  "offline":"Offline",
+
+  "showstate":"Show online only",
+  "noonline":"No online users",
+
+
+  "confirm":"Confirm",
+  "deletemes":"Delete message",
+  "deleting": "Message is being deleted, please wait",
+  "deleteture": "Message deleted successfully!",
+  "deletefalse": "Error please try again",
+
+  "sending":"Message is being sent, please wait",
+  "sendture":"Sent successfully",
+  "sendfalse":"Sending failed"
+
+}

@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::-webkit-scrollbar {
+  display: none; /* 完全隐藏滚动条 */
+  width: 0;      /* 也可以设置宽度为0 */
+  height: 0;     /* 也可以设置高度为0 */
+}
+
+html, body {
+  scrollbar-width: none; /* Firefox 隐藏滚动条 */
+}
+
+html, body {
+  -ms-overflow-style: none; /* IE 隐藏滚动条 */
+}

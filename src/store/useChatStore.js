@@ -17,7 +17,7 @@ export const useChatStore = create((set, get) => ({
       const res = await axiosInstance.get("/message/users");
       set({ users: res.data });
     } catch (error) {
-      toast.error(error.response.data.message);
+      console.log(error.response.data.message);
     } finally {
       set({ isUsersLoading: false });
     }
@@ -29,7 +29,7 @@ export const useChatStore = create((set, get) => ({
       const res = await axiosInstance.get(`/message/${userId}`);
       set({ messages: res.data });
     } catch (error) {
-      toast.error(error.response.data.message);
+      console.log(error.response.data.message);
     } finally {
       set({ isMessagesLoading: false });
     }
@@ -40,7 +40,7 @@ export const useChatStore = create((set, get) => ({
       const res = await axiosInstance.post(`/message/send/${selectedUser._id}`, messageData);
       set({ messages: [...messages, res.data] });
     } catch (error) {
-      toast.error(error.response.data.message);
+      console.log(error.response.data.message);
     }
   },
   //信息订阅
@@ -64,10 +64,10 @@ export const useChatStore = create((set, get) => ({
 
   },
   //消息删除
-  deleteMessage : async (messageId) => {
+  deleteMessage : async (messageId, t) => {
     toast.dismiss()
     if(get().isMessageDeleting) {
-      toast('Message is deleting, please wait', {
+      toast(t('deleting'), {
         icon: '🕒',
       });
       return
@@ -85,9 +85,9 @@ export const useChatStore = create((set, get) => ({
           return res.data
         }),
         {
-          loading: '删除中...',
-          success: '消息删除成功！',
-          error: '再试一次吧'
+          loading: t('deleting'),
+          success: t('deleteture'),
+          error: t('deletefalse')
         }
       )
     } catch (error) {

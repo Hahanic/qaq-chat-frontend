@@ -6,8 +6,11 @@ import MessageSkeleton from "./skeletons/MessageSkeleton"
 import { useAuthStore } from "../store/useAuthStore"
 import { formatMessageTime } from "../lib/utils"
 import toast from "react-hot-toast"
+import { useTranslation } from "../locales/TranslationContext"
 
 const ChatContainer = () => {
+  const { t } = useTranslation()
+
   const { authUser } = useAuthStore()
   const { messages, getMessages, isMessagesLoading, selectedUser, subscribeToMessages, unsubscribeFromMessages, subscribeToMessageDeletions, unsubscribeFromMessageDeletions, deleteMessage } = useChatStore()
 
@@ -33,16 +36,16 @@ const ChatContainer = () => {
   }, [messages])
 
   //删除按钮
-  const handleDeleteMessage = (messageId, senderId) => {
+  const handleDeleteMessage = (messageId, senderId, t) => {
     toast.dismiss()
 
     console.log(messageId, senderId)
     if(senderId !== authUser._id) return
     toast(() => (
       <span>
-        <b>🗑️Delete message</b>?
-        <button onClick={() => deleteMessage(messageId)}>
-          Confirm
+        <b>{t('deletemes')}？ 🗑️</b>
+        <button onClick={() => deleteMessage(messageId, t)}>
+          {t('confirm')}🗑️
         </button>
       </span>
     ), {
@@ -90,13 +93,14 @@ const ChatContainer = () => {
                 chat-bubble flex flex-col
                 ${message.senderId === authUser._id ? "bg-primary text-primary-content" : "bg-base-200 text-base-content"}
               `}
-              onClick={() => handleDeleteMessage(message._id, message.senderId)}
+              onClick={() => handleDeleteMessage(message._id, message.senderId, t)}
             >
               {message.image && (
                 <img
                   src={message.image}
                   alt="Attachment"
                   className="sm:max-w-[200px] rounded-md mb-2"
+                  loading="lazy"
                 />
               )}
               {message.text && <p className="text-sm">{message.text}</p>}

@@ -2,8 +2,11 @@ import { useRef, useState } from "react";
 import { useChatStore } from "../store/useChatStore";
 import { Image, Send, X } from "lucide-react";
 import toast from "react-hot-toast";
+import { useTranslation } from "../locales/TranslationContext"
+
 
 const MessageInput = () => {
+  const { t } = useTranslation()
   const [text, setText] = useState("");
   const [isSending, setIsSending] = useState(false)
   const [imagePreview, setImagePreview] = useState(null);
@@ -37,32 +40,23 @@ const MessageInput = () => {
     if (!text.trim() && !imagePreview) return;
     // 如果消息正在发送
     if(isSending) {
-      toast('Message is being sent, please wait', {
+      toast(t('sending'), {
         icon: '🕒',
       });
       return
     }
     setIsSending(true)
     try {
-      
-      // await sendMessage({
-      //   text: text.trim(),
-      //   image: imagePreview,
-      // });
 
-      // //清除
-      // setText("");
-      // setImagePreview(null);
-      // if (fileInputRef.current) fileInputRef.current.value = "";
       await toast.promise(
         sendMessage({
           text: text.trim(),
           image: imagePreview,
         }),
         {
-          loading: 'Message is being sent, please wait',
-          success: <b>Sent successfully</b>,
-          error: <b>Sending failed</b>,
+          loading: t('sending'),
+          success: <b>{t('sendture')}</b>,
+          error: <b>{t('sendfalse')}</b>,
         }
       );
       //清除

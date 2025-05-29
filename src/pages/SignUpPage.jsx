@@ -4,8 +4,11 @@ import { Eye, EyeOff, Loader2, Mail, MessagesSquare, User, Lock } from "lucide-r
 import { Link } from "react-router-dom";
 import AuthImagePattern from "../components/AuthImagePattern";
 import toast from "react-hot-toast";
+import { useTranslation } from "../locales/TranslationContext.jsx";
 
 const SignupPage = () => {
+  const { t } = useTranslation()
+
   const [showPassword, setShowPassword] = useState(false)
   const [formData, setFormData] = useState({
     fullName: "",
@@ -44,15 +47,15 @@ const SignupPage = () => {
               >
                 <MessagesSquare className="size-6 text-primary" />
               </div>
-              <h1 className="text-2xl font-bold mt-2">Create Account</h1>
-              <p className="text-base-content/60">Get started with your free account</p>
+              <h1 className="text-2xl font-bold mt-2">{t('welcomein')}</h1>
+              <p className="text-base-content/60">{t('signdesc')}</p>
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-medium">Full Name</span>
+                <span className="label-text font-medium">{t('name')}</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -61,7 +64,7 @@ const SignupPage = () => {
                 <input
                   type="text"
                   className={`input input-bordered w-full pl-10`}
-                  placeholder="John Doe"
+                  placeholder="John"
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                 />
@@ -70,7 +73,7 @@ const SignupPage = () => {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-medium">Email</span>
+                <span className="label-text font-medium">{t('email')}</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -88,7 +91,7 @@ const SignupPage = () => {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-medium">Password</span>
+                <span className="label-text font-medium">{t('password')}</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -119,19 +122,19 @@ const SignupPage = () => {
               {isSigningUp ? (
                 <>
                   <Loader2 className="size-5 animate-spin" />
-                  Loading...
+                  {t('craeting')}...
                 </>
               ) : (
-                "Create Account"
+                t('create')
               )}
             </button>
           </form>
 
           <div className="text-center">
             <p className="text-base-content/60">
-              Already have an account?{" "}
+              {t('havacc')}{" "}
               <Link to="/login" className="link link-primary">
-                Sign in
+                {t('sign')}
               </Link>
             </p>
           </div>
@@ -141,8 +144,8 @@ const SignupPage = () => {
       {/* right side */}
 
       <AuthImagePattern
-        title="Join our community"
-        subtitle="Connect with friends, share moments, and stay in touch with your loved ones."
+        title={"SskeletonT"}
+        subtitle={"SskeletonD"}
       />
     </div>
   )

@@ -1,0 +1,64 @@
+{
+  "title": "我们这一家",
+  "set": "设置",
+  "profile": "账户",
+  "logout": "退出",
+  "toggleLang": "语言",
+
+  "profiledata":"卡片",
+  "profileupdating":"上传中...",
+  "profileupdate":"单击图标更新您的头像",
+  "accinfor":"账号信息",
+  "regdate":"注册日期",
+  "accstatus":"账号状态",
+  "status":"活动",
+
+  "welcome":"欢迎回来",
+  "logindesc":"登录您的账户",
+  "email":"邮箱",
+  "password":"密码",
+  "sign":"登录",
+  "signing":"登录中...",
+  "notacc":"还没有账户？",
+  "create":"注册",
+
+  "LskeletonT":"欢迎回来!",
+  "LskeletonD":"登录以继续您的对话并查看您的消息通知。",
+
+  "SskeletonT":"加入我们的社区！",
+  "SskeletonD":"与家人和朋友保持联系、分享精彩的瞬间。",
+
+  "welcomein":"创建账户",
+  "signdesc":"开始使用您的免费帐户",
+  "name":"名字",
+  "havacc":"已有账户？",
+  "craeting":"注册中",
+
+  
+  "theme":"主题",
+  "themedesc":"请选择要应用的主题",
+  "preview":"预览",
+  "prename":"张威克",
+
+  "welcometitle":"欢迎来到OURO!",
+  "welcomedesc":"从侧边栏选择一个对话开始聊天",
+
+  "contacts":"通讯录",
+  "online":"在线",
+  "offline":"离线",
+
+  "showstate":"仅展示在线用户",
+  "noonline":"当前没有用户在线",
+
+
+  "confirm":"确认",
+  "deletemes":"删除消息",
+  "deleting": "删除中...",
+  "deleteture": "消息删除成功！",
+  "deletefalse": "再试一次吧",
+
+  "sending":"消息正在发送，请稍等",
+  "sendture":"发送成功",
+  "sendfalse":"发送失败"
+
+}

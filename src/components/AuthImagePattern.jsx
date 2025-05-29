@@ -1,4 +1,10 @@
+import { useTranslation } from "../locales/TranslationContext.jsx";
+
+
 const AuthImagePattern = ({ title, subtitle }) => {
+  const { t } = useTranslation()
+
+
   return (
     <div className="hidden lg:flex items-center justify-center bg-base-200 p-12">
       <div className="max-w-md text-center">
@@ -12,8 +18,8 @@ const AuthImagePattern = ({ title, subtitle }) => {
             />
           ))}
         </div>
-        <h2 className="text-2xl font-bold mb-4">{title}</h2>
-        <p className="text-base-content/60">{subtitle}</p>
+        <h2 className="text-2xl font-bold mb-4">{t(title)}</h2>
+        <p className="text-base-content/60">{t(subtitle)}</p>
       </div>
     </div>
   );

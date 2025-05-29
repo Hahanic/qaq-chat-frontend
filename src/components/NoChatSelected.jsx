@@ -1,6 +1,9 @@
 import { MessageSquare } from "lucide-react";
+import { useTranslation } from "../locales/TranslationContext.jsx";
 
 const NoChatSelected = () => {
+  const { t } = useTranslation()
+
   return (
     <div className="w-full flex flex-1 flex-col items-center justify-center p-16 bg-base-100/50">
       <div className="max-w-md text-center space-y-6">
@@ -17,9 +20,9 @@ const NoChatSelected = () => {
         </div>
 
         {/* Welcome Text */}
-        <h2 className="text-2xl font-bold">Welcome to Chatty!</h2>
+        <h2 className="text-2xl font-bold">{t('welcometitle')}</h2>
         <p className="text-base-content/60">
-          Select a conversation from the sidebar to start chatting
+          {t('welcomedesc')}
         </p>
       </div>
     </div>
