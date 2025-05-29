@@ -96,7 +96,7 @@ const SettingsPage = () => {
           <div className="p-4 bg-base-200">
             <div className="max-w-lg mx-auto">
               {/* Mock Chat UI */}
-              <div className="bg-base-100 rounded-xl shadow-sm overflow-hidden">
+              <div className="bg-base-100 rounded-xl shadow-xs overflow-hidden">
                 {/* Chat Header */}
                 <div className="px-4 py-3 border-b border-base-300 bg-base-100">
                   <div className="flex items-center gap-3">
@@ -119,7 +119,7 @@ const SettingsPage = () => {
                     >
                       <div
                         className={`
-                          max-w-[80%] rounded-xl p-3 shadow-sm
+                          max-w-[80%] rounded-xl p-3 shadow-xs
                           ${message.isSent ? "bg-primary text-primary-content" : "bg-base-200"}
                         `}
                       >

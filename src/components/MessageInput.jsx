@@ -97,7 +97,11 @@ const MessageInput = () => {
         <div className="flex-1 flex items-center gap-2">
           <input
             type="text"
-            className="w-full input input-bordered rounded-lg input-sm sm:input-md"
+            className="
+            w-full input rounded-lg input-sm sm:input-md
+            focus:outline-none          {/* 移除默认的浏览器焦点轮廓 */}
+            focus:border-blue-600       {/* 焦点时边框变为蓝色 */}
+            "
             placeholder="Type a message..."
             value={text}
             onChange={(e) => setText(e.target.value)}

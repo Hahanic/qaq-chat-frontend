@@ -24,13 +24,15 @@ const Sidebar = () => {
   if (isUsersLoading) return <SidebarSkeleton />;
 
   return (
-    <aside className="h-full w-20 lg:w-72 sm:flex sm:flex-col hidden border-r border-base-300 transition-all duration-200">
+    <aside className={`h-full w-60 lg:w-72 flex flex-col border-r border-base-300 transition-all duration-200 ${selectedUser ? 'sm:flex hidden' : '' }`}>
       <div className="border-b border-base-300 w-full p-5">
         <div className="flex items-center gap-2">
           <Users className="size-6" />
-          <span className="font-medium hidden lg:block">{t('contacts')}</span>
+          <span className="font-medium">{t('contacts')}</span>
         </div>
-        <div className="mt-3 hidden lg:flex items-center gap-2">
+        {/* 在线 */}
+        <div className="mt-3 flex items-center gap-2">
+          {/* 点 */}
           <label className="cursor-pointer flex items-center gap-2">
             <input
               type="checkbox"
@@ -38,8 +40,9 @@ const Sidebar = () => {
               onChange={(e) => setShowOnlineOnly(e.target.checked)}
               className="checkbox checkbox-sm"
             />
-            <span className="text-sm">{t('showstate')}</span>
+            <span className="text-sm hidden lg:inline">{t('showstate')}</span>
           </label>
+          {/* 数 */}
           <span className="text-xs text-zinc-500">({onlineUsers.length - 1} {t('online')})</span>
         </div>
       </div>
@@ -55,7 +58,7 @@ const Sidebar = () => {
               ${selectedUser?._id === user._id ? "bg-base-300 ring-1 ring-base-300" : ""}
             `}
           >
-            <div className="relative mx-auto lg:mx-0">
+            <div className="relative lg:mx-0">
               <img
                 src={user.profilePic || "/avatar.png"}
                 alt={user.name}
@@ -70,7 +73,7 @@ const Sidebar = () => {
             </div>
 
             {/* User info - only visible on larger screens */}
-            <div className="hidden lg:block text-left min-w-0">
+            <div className=" text-left min-w-0">
               <div className="font-medium truncate">{user.fullName}</div>
               <div className="text-sm text-zinc-400">
                 {onlineUsers.includes(user._id) ? t('online') : t('offline')}
