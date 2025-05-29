@@ -101,7 +101,7 @@ export const useAuthStore = create((set, get) => ({
   connectSocket: () => {
     const { authUser } = get()
     if(!authUser || get().socket?.connected) return
-    //创建实例=》连接服务器=》向服务器传递userId
+    //创建实例=>连接服务器=>向服务器传递userId
     const socket = io(BASE_URL, {
       query: {
         userId: authUser._id
